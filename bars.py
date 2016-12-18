@@ -28,7 +28,7 @@ def get_closest_bar(data, longitude, latitude):
 
 
 if __name__ == '__main__':
-    filepath = 'data-2897-2016-11-23.json'
+    filepath = input('Enter file path: ')
     get_biggest_bar(load_data(filepath))
     get_smallest_bar(load_data(filepath))
     get_closest_bar(load_data(filepath), float(input('Longitude: ')), float(input('Latitude: ')))
