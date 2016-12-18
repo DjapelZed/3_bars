@@ -31,4 +31,4 @@ if __name__ == '__main__':
     filepath = input()
     get_biggest_bar(load_data(filepath))
     get_smallest_bar(load_data(filepath))
-    get_closest_bar(load_data(filepath), float(input()), float(input()))
+    get_closest_bar(load_data(filepath), float(input('Longitude: ')), float(input('Latitude: ')))
