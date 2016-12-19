@@ -1,6 +1,8 @@
 import codecs
 import json
 import shutil
+import math
+
 
 def load_data(filepath):
     shutil.copy2(filepath, 'json-txt.txt')
@@ -11,20 +13,19 @@ def load_data(filepath):
 
 def get_biggest_bar(data):
     biggest_bar = max(data, key=lambda x: x['SeatsCount'])
-    return print('Biggest bar is: ',biggest_bar['Name'],'-',biggest_bar['SeatsCount'])
+    return print('Biggest bar is: ', biggest_bar['Name'], '-', biggest_bar['SeatsCount'])
 
 
 def get_smallest_bar(data):
-
     smallest_bar = min(data, key=lambda x: x['SeatsCount'])
-    return print('Smallest bar is: ',smallest_bar['Name'],'-',smallest_bar['SeatsCount'])
+    return print('Smallest bar is: ', smallest_bar['Name'], '-', smallest_bar['SeatsCount'])
+
 
 def get_closest_bar(data, longitude, latitude):
-    import math
     closet_bar = min(data, key=lambda x: math.sqrt
     ((x['geoData']['coordinates'][0] - longitude) ** 2 +
      (x['geoData']['coordinates'][1] - latitude) ** 2))
-    return print('Closet bar is: ',closet_bar['Name'])
+    return print('Closet bar is: ', closet_bar['Name'])
 
 
 if __name__ == '__main__':
