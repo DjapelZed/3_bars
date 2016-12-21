@@ -28,10 +28,10 @@ def get_closest_bar(data, longitude, latitude):
 
 if __name__ == '__main__':
     filepath = input('Enter file path: ')
-    data = load_data(filepath)
-    biggest_bar = get_biggest_bar(data)
-    smallest_bar = get_smallest_bar(data)
-    closest_bar = get_closest_bar(data, float(input('Longitude: ')), float(input('Latitude: ')))
+    json_file = load_data(filepath)
+    biggest_bar = get_biggest_bar(json_file)
+    smallest_bar = get_smallest_bar(json_file)
+    closest_bar = get_closest_bar(json_file, float(input('Longitude: ')), float(input('Latitude: ')))
     print('Biggest bar is', biggest_bar[0]['Name'],':',biggest_bar[1]['SeatsCount'])
     print('Smallest bar is', smallest_bar[0]['Name'], ':', smallest_bar[1]['SeatsCount'])
     print('Closet bar is', closest_bar['Name'])
