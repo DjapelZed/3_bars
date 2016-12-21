@@ -11,19 +11,19 @@ def load_data(filepath):
 
 def get_biggest_bar(data):
     biggest_bar = max(data, key=lambda x: x['SeatsCount'])
-    return biggest_bar['Name'], biggest_bar['SeatsCount']
+    return biggest_bar, biggest_bar
 
 
 def get_smallest_bar(data):
     smallest_bar = min(data, key=lambda x: x['SeatsCount'])
-    return smallest_bar['Name'], smallest_bar['SeatsCount']
+    return smallest_bar, smallest_bar
 
 
 def get_closest_bar(data, longitude, latitude):
     closet_bar = min(data, key=lambda x: math.sqrt
     ((x['geoData']['coordinates'][0] - longitude) ** 2 +
      (x['geoData']['coordinates'][1] - latitude) ** 2))
-    return closet_bar['Name']
+    return closet_bar
 
 
 if __name__ == '__main__':
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     biggest_bar = get_biggest_bar(data)
     smallest_bar = get_smallest_bar(data)
     closest_bar = get_closest_bar(data, float(input('Longitude: ')), float(input('Latitude: ')))
-    print(r'Biggest bar is', biggest_bar[0],':',biggest_bar[1])
-    print(r'Smallest bar is', smallest_bar[0], ':', smallest_bar[1])
-    print(r'Closet bar is', closest_bar)
+    print('Biggest bar is', biggest_bar[0]['Name'],':',biggest_bar[1]['SeatsCount'])
+    print('Smallest bar is', smallest_bar[0]['Name'], ':', smallest_bar[1]['SeatsCount'])
+    print('Closet bar is', closest_bar['Name'])
 
