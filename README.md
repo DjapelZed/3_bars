@@ -1,4 +1,4 @@
-# 3_bars
+# JSON parser of bars
 Скачай [JSON файл](http://op.mos.ru/EHDWSREST/catalog/export/get?id=84505), затем распакуй.
 Путь к файлу укажи через консоль. Пример:`C:\Users\User\Desktop\json\data***.json`
 В терминале отобразятся 2 бара - самый маленький и самый большой (по кол-ву посадочных мест). 
